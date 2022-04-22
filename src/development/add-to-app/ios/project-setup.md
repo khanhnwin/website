@@ -164,6 +164,26 @@ end
 
 <li markdown="1">
 
+In the `Podfile`'s `post_install` block, call `flutter_post_install(installer)`.
+
+<!--code-excerpt "MyApp/Podfile" title-->
+```ruby
+post_install do |installer|
+  flutter_post_install(installer) if defined?(flutter_post_install)
+end
+```
+
+{{site.alert.note}}
+  The `flutter_post_install` method (recently added to Flutter),
+  adds build settings to support native Apple Silicon `arm64` iOS simulators.
+  Include the `if defined?(flutter_post_install)` check to ensure your `Podfile`
+  is valid if you are running on older versions of Flutter that don't have this method.
+{{site.alert.end}}
+
+</li>
+
+<li markdown="1">
+
 Run `pod install`.
 
 {{site.alert.note}}
@@ -420,8 +440,11 @@ for local network permission. The permission can also be allowed by enabling
 
 ## Apple Silicon (`arm64` Macs)
 
-Flutter does not yet support `arm64` iOS simulators. To run your host app on an Apple Silicon
-Mac, exclude `arm64` from the simulator architectures.
+On an Apple Silicon (M1) Mac, the host app builds for an `arm64` simulator.
+While Flutter supports `arm64` simulators, some plugins might not. If you use
+one of these plugins, you might see a compilation error like **Undefined symbols
+for architecture arm64** and you must exclude `arm64` from the simulator
+architectures in your host app.
 
 In your host app target, find the **Excluded Architectures** (`EXCLUDED_ARCHS`) build setting.
 Click the right arrow disclosure indicator icon to expand the available build configurations.

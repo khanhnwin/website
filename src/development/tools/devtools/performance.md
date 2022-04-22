@@ -73,7 +73,7 @@ and clips or shadows in specific situations.
 For more information on profiling, see
 [Identifying problems in the GPU graph][GPU graph].
 
-### Jank
+### Jank (slow frame)
 
 The frame rendering chart shows jank with a red overlay.
 A frame is considered to be janky if it takes more than
@@ -84,6 +84,16 @@ experience UI jank or dropped frames.
 
 For more information on how to analyze your app's performance,
 see [Flutter performance profiling][].
+
+### Shader compilation
+Shader compilation occurs when a shader is first used in your Flutter
+app. Frames that perform shader compilation are marked in dark
+red:
+
+![Screenshot of shader compilation for a frame]({{site.url}}/assets/images/docs/tools/devtools/shader-compilation-frames-chart.png)
+
+For more information on how to reduce shader compilation jank, see [Reduce
+shader compilation jank on mobile][].
 
 ## Timeline events chart
 
@@ -108,6 +118,80 @@ with the mouse wheel / trackpad
 You can click an event to view CPU profiling information in the CPU profiler
 below, described in the next section.
 
+## Enhance tracing 
+
+To view more detailed tracing in the timeline events chart,
+use the options in the enhance tracing dropdown:
+
+{{site.alert.note}}
+  Frame times may be negatively affected when these options are enabled.
+{{site.alert.end}}
+
+![Screenshot of enhance tracing dropdown]({{site.url}}/assets/images/docs/tools/devtools/enhance-tracing.png)
+
+To see the new timeline events,
+reproduce the activity in your app that you are interested in tracing,
+and then select a frame to inspect the timeline.
+
+### Track widget builds
+
+To see the build() method events in the timeline,
+enable the Track Widget Builds option.
+The name of the widget is shown in the timeline event.
+
+![Screenshot of track widget builds]({{site.url}}/assets/images/docs/tools/devtools/track-widget-builds.png)
+
+### Track layouts
+
+To see render object layout events in the timeline,
+enable the Track Layouts option:
+
+![Screenshot of track layouts]({{site.url}}/assets/images/docs/tools/devtools/track-layouts.png)
+
+### Track paints
+
+To see render object paint events in the timeline,
+enable the Track Paints option:
+
+
+![Screenshot of track paints]({{site.url}}/assets/images/docs/tools/devtools/track-paints.png)
+
+## More debugging options
+
+To diagnose performance problems related to rendering layers,
+toggle off a rendering layer.
+These options are enabled by default.
+
+To see the effects on your app's performance,
+reproduce the activity in your app.
+Then select the new frames in the frames chart
+to inspect the timeline events
+with the layers disabled.
+If Raster time has significantly decreased,
+excessive use of the effects you disabled might be contributing
+to the jank you saw in your app.
+
+**Render Clip layers**
+:  Disable this option  to check whether excessive use of clipping
+  is affecting performance.
+  If performance improves with this option disabled,
+  try to reduce the use of clipping effects in your app.
+  
+**Render Opacity layers**
+:  Disable this option to check whether
+   excessive use of opacity effects are affecting performance.
+   If performance improves with this option disabled,
+   try to reduce the use of opacity effects in your app.
+  
+**Render Physical Shape Layers**
+:  Disable this option to check whether excessive
+   use of physical modeling effects are affecting performance,
+  such as shadows or elevation.
+  If performance improves with this option disabled,
+  try to reduce the use of physical modeling effects in your app.
+
+![Screenshot of more debugging options]({{site.url}}/assets/images/docs/tools/devtools/more-debugging-options.png)
+
 ## Import and export
 
 DevTools supports importing and exporting performance snapshots.
@@ -117,8 +201,8 @@ performance page. To import a performance snapshot, you can drag and drop the
 snapshot into DevTools from any page. **Note that DevTools only
 supports importing files that were originally exported from DevTools.**
 
-
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
-[GPU graph]: {{site.url}}/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
-[Flutter performance profiling]: {{site.url}}/perf/rendering/ui-performance
+[GPU graph]: {{site.url}}/perf/ui-performance#identifying-problems-in-the-gpu-graph
+[Flutter performance profiling]: {{site.url}}/perf/ui-performance
+[Reduce shader compilation jank on mobile]: {{site.url}}/perf/shader
 [Import and export]: #import-and-export

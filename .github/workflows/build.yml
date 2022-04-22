@@ -10,6 +10,9 @@ on:
   schedule:
     - cron: "0 0 * * 0"
 
+# Declare default permissions as read only.
+permissions: read-all
+
 env:
   NODE_ENV: production
   NODE_VERSION: 17
@@ -30,7 +33,7 @@ jobs:
             channel: stable
             experimental: false
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - name: Test
         run: make test
         env:
@@ -45,15 +48,17 @@ jobs:
       && github.ref == 'refs/heads/main'
       && github.repository == 'flutter/website'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
         with:
           submodules: "recursive"
       - name: Install Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@56337c425554a6be30cdef71bf441f15be286854
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install firebase tools
-        run: npm install -g firebase-tools
+        run: npm ci
+      - name: Update path
+        run: echo "./node_modules/.bin/" >> $GITHUB_PATH
       - name: Build
         run: make build
         env:

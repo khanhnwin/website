@@ -12,16 +12,27 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Required Kotlin version][]
+* [Deprecated API removed after v2.10][]
+* [Page transitions replaced by ZoomPageTransitionsBuilder][]
+* [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips][]
+* [ThemeData's toggleableActiveColor property has been deprecated][]
+
+[Deprecated API removed after v2.10]: {{site.url}}/release/breaking-changes/2-10-deprecations
+[Page transitions replaced by ZoomPageTransitionsBuilder]: {{site.url}}/release/breaking-changes/page-transition-replaced-by-ZoomPageTransitionBuilder
+[Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips]: {{site.url}}/release/breaking-changes/chip-usedeletebuttontooltip-migration
+[ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
+
+### Released in Flutter 2.10
+
 * [Deprecated API removed after v2.5][]
 * [Raw images on Web uses correct origin and colors][]
+* [Required Kotlin version][]
 * [Scribble Text Input Client][]
 
-[Required Kotlin version]: {{site.url}}/release/breaking-changes/kotlin-version
 [Deprecated API removed after v2.5]: {{site.url}}/release/breaking-changes/2-5-deprecations
 [Raw images on Web uses correct origin and colors]: {{site.url}}/release/breaking-changes/raw-images-on-web-uses-correct-origin-and-colors
+[Required Kotlin version]: {{site.url}}/release/breaking-changes/kotlin-version
 [Scribble Text Input Client]: {{site.url}}/release/breaking-changes/scribble-text-input-client
-[ThemeData's toggleableActiveColor property has been deprecated]: {{site.url}}/release/breaking-changes/toggleable-active-color
 
 ### Released in Flutter 2.5
 

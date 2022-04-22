@@ -5,12 +5,20 @@ description: A list of what’s new on flutter.dev and related sites.
 
 This page contains current and previous announcements of
 what's new on the Flutter website and blog.
+For details about what's new in the Flutter releases
+see the [release notes][] page.
 
 To stay on top of Flutter announcements,
 including breaking changes,
 join the [flutter-announce][] Google group.
 
+For Dart, you can join the [Dart Announce][] Google group,
+and review the [Dart changelog][].
+
+[release notes]: {{site.url}}/development/tools/sdk/release-notes
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
+[Dart changelog]: https://github.com/dart-lang/sdk/blob/master/CHANGELOG.md
 
 ## Feb 3, 2022, Windows Support: 2.10 release
 
@@ -454,7 +462,7 @@ publication since the last stable release:
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
 [q1-2020]: {{site.flutter-medium}}/what-are-the-important-difficult-tasks-for-flutter-devs-q1-2020-survey-results-a5ef2305429b
-[Reducing shader compilation jank on mobile]: {{site.url}}/perf/rendering/shader
+[Reducing shader compilation jank on mobile]: {{site.url}}/perf/shader
 [shaking]: {{site.flutter-medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
 [Two Months of #FlutterGoodNewsWednesday]: {{site.flutter-medium}}/two-months-of-fluttergoodnewswednesday-a12e60bab782
 [ubuntu]: {{site.flutter-medium}}/announcing-flutter-linux-alpha-with-canonical-19eb824590a9
@@ -743,8 +751,8 @@ component and how to customize it, see
 [Flutter Medium Publication]: {{site.flutter-medium}}
 [Flutter's build modes]: {{site.url}}/testing/build-modes
 [Material RangeSlider in Flutter]: {{site.flutter-medium}}/material-range-slider-in-flutter-a285c6e3447d
-[Performance best practices]: {{site.url}}/perf/rendering/best-practices
-[Performance profiling]: {{site.url}}/perf/rendering/ui-performance
+[Performance best practices]: {{site.url}}/perf/best-practices
+[Performance profiling]: {{site.url}}/perf/ui-performance
 [Preparing an Android app for release]: {{site.url}}/deployment/android
 [`RangeSlider`]: {{site.api}}/flutter/material/RangeSlider-class.html
 [Simple app state management]: {{site.url}}/development/data-and-backend/state-mgmt/simple
@@ -802,7 +810,7 @@ If you have questions or comments about any of these docs,
 [ephemeral vs app state]: {{site.url}}/development/data-and-backend/state-mgmt/ephemeral-vs-app
 [file an issue]: {{site.repo.this}}/issues
 [introduction]: {{site.url}}/development/data-and-backend/state-mgmt/intro
-[Performance profiling]: {{site.url}}/perf/rendering/ui-performance
+[Performance profiling]: {{site.url}}/perf/ui-performance
 [1.2.1 release notes]: {{site.url}}/development/tools/sdk/release-notes/release-notes-1.2.1
 [simple app state management]: {{site.url}}/development/data-and-backend/state-mgmt/simple
 [state management advice]: {{site.url}}/development/data-and-backend/state-mgmt/intro
