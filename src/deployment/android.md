@@ -123,7 +123,7 @@ If not, create one by either:
     On Windows, use the following command:
 
     ```terminal
-    keytool -genkey -v -keystore c:\Users\USER_NAME\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+    keytool -genkey -v -keystore %userprofile%\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
     ```
 
     This command stores the `upload-keystore.jks` file in your home
@@ -260,7 +260,9 @@ Flutter to automatically depend on `androidx.multidex:multidex` and use a
 generated `FlutterMultiDexApplication` as the project's application.
 
 {{site.alert.note}}
-  Multidex support is natively included when targeting min sdk 21+.
+  Multidex support is natively included when targeting Android SDK 21 or later.
+  However, it isn't recommended to target API 21+ purely to resolve the multidex issue
+  as this might inadvertently exclude users running older devices.
 {{site.alert.end}}
 
 You might also choose to manually support multidex by following Android's guides

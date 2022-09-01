@@ -4,89 +4,99 @@ short-title: Supported platforms
 description: The platforms that Flutter supports by platform version.
 ---
 
+## Support Tiers
+
+We define three tiers of support for the platforms on
+which Flutter runs:
+
+1. Google-tested platforms
+  are automatically tested at every commit
+  by continuous integration testing.
+1. Best-effort platforms, supported through community
+   testing, are platforms we believe we support through
+   coding practices and ad-hoc testing,
+   but rely on the community for testing.
+1. Unsupported platforms, which are platforms that
+   might work, but that the development team
+   doesn't directly test or support.
+   
 ## Supported platforms
 
-As of the current release, Flutter supports the following platforms:
+As of the current release,
+Flutter supports the following platforms as part of Google-tested and best-effort platform tier:
 
+<div class="table-wrapper" markdown="1">
 |Platform|Version                       |Channels |
 |--------|------------------------------|---------|
-|Android | API 19 & above               | All     |
-|iOS     | iOS 9 & above                | All     |
-|Linux   | Debian 10 & above            | All     |
-|macOS   | El Capitan & above           | All     |
+|Android | API 16 (Android 4.1) & above | All     |
+|iOS     | iOS 11 & above               | All     |
+|Linux   | Debian, 64-bit               | All     |
+|macOS   | El Capitan (10.11) & above   | All     |
 |Web     | Chrome 84  & above           | All     |
 |Web     | Firefox 72.0 & above         | All     |
 |Web     | Safari on El Capitan & above | All     |
 |Web     | Edge 1.2.0 & above           | All     |
-|Windows | Windows 7 & above            | All     |
+|Windows | Windows 7 & above, 64-bit    | All     |
+{:.table.table-striped}
+</div>
 
-All channels include master, beta and stable channels. 
+All channels include master, beta,
+and stable channels.
 
-**Please note - dev channel has been retired. Refer to this [blog](https://medium.com/flutter/whats-new-in-flutter-2-8-d085b763d181) for more information.**
+### Google-tested platforms
 
-## How we define a supported platform
+<div class="table-wrapper" markdown="1">
+|Platform|Version               |
+|--------|----------------------|
+|Android |Android SDK 19–30*    |
+|iOS     |14-15                 |
+|Linux   |Debian 10             |
+|Linux   |Ubuntu 18.04 LTS      |
+|macOS   |Monterey (12) & above |
+|Web     |Chrome 84             |
+|Web     |Firefox 72.0          |
+|Web     |Safari / Catalina     |
+|Web     |Edge 1.2.0            |
+|Windows |Windows 10            |
+{:.table.table-striped}
+</div>
 
-We define three tiers of support for the platforms on which Flutter runs:
-1. Supported Google-tested platforms,
-   which are platforms the Flutter team at 
-   Google tests in continuous integration at every commit. 
-1. Best effort platforms, supported community testing,
-   which are platforms we believe we support through coding practices 
-    and ad-hoc testing, but rely on the community for testing.
-1. Unsupported platforms, which are platforms that may work,
-   but that the development team does not directly test or support.
+\* Passing tests on Android SDK 19 also confers a passing result on SDK 20.
+  This is because Android SDK 20 has additional support for Android Wear,
+  but otherwise no new or deprecated API.
 
+### Best-effort platforms
 
-### Supported Google-tested platforms
+<div class="table-wrapper" markdown="1">
+|Platform|Version             |
+|--------|--------------------|
+|Android |Android SDK 16–18   |
+|iOS     |iOS 11-13           |
+|Linux   |Debian 11           |
+|Linux   |Debian 9 & below    |
+|Linux   |Ubuntu 20.04        |
+|Linux   |Ubuntu 22.04 (Aspirational Google-tested platform)        |
+|macOS   |El Capitan (10.11) - Big Sur (11)*   |
+|Windows |Windows 11 (Aspirational Google-tested platform)          |
+|Windows |Windows 8           |
+|Windows |Windows 7           |
+{:.table.table-striped}
+</div>
 
-|Platform|Version              |
-|-------|----------------------|
-|Android|Android SDK 30        |
-|Android|Android SDK 29        |
-|Android|Android SDK 28        |
-|Android|Android SDK 27        |
-|Android|Android SDK 26        |
-|Android|Android SDK 25        |
-|Android|Android SDK 24        |
-|Android|Android SDK 23        |
-|Android|Android SDK 22        |
-|Android|Android SDK 21        |
-|Android|Android SDK 19        |
-|iOS    | 14-15                |
-|Web    | Chrome 84            |
-|Web    | Firefox 72.0         |
-|Web    | Safari / Catalina    |
-|Web    | Edge 1.2.0           |
-|Windows| Windows 10           |
-|macOS  | El Capitan & greater |
-|Linux  | Debian 10            |
-
-Note that Android SDK 20 is covered by testing Android SDK 19, 
-as the differences between the two platform versions are
-minimal.
-
-### Best effort platforms tested by the community
-
-|Platform|Version       |
-|--------|---------------|
-|Android |Android SDK 20 |
-|Android |Android SDK 18 |
-|Android |Android SDK 17 |
-|Android |Android SDK 16 |
-|iOS     |iOS 9-13       |
-|Windows |Windows 8      |
-|Windows |Windows 7      |
-|Linux   |Debian & below |
+\* Flutter 3.3 is the last stable release with macOS 10.11 and 10.12 best-effort support.
 
 ### Unsupported platforms
 
-|Platform|Version                                 |
-|--------|----------------------------------------|
-|Android |Android SDK 18 & below                  |
-|iOS     |[iOS 8] & below and [`arm7v` 32-bit iOS]|
-|Windows |Windows Vista & below                   |
-|Windows |Any 32-bit platform                     |   
-|macOS   | Yosemite & below                       |
+<div class="table-wrapper" markdown="1">
+|Platform|Version                                     |
+|--------|--------------------------------------------|
+|Android |Android SDK 15 & below                      |
+|iOS     |[iOS 10 & below and `arm7v` 32-bit iOS][]   |
+|Linux   |Any 32-bit platform                         |
+|macOS   |Yosemite (10.10) & below                    |
+|Windows |Windows Vista & below                       |
+|Windows |Any 32-bit platform                         |
 
-[iOS 8]: {{site.url}}/go/rfc-ios8-deprecation
-[`arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported
+{:.table.table-striped}
+</div>
+[iOS 10 & below and `arm7v` 32-bit iOS]: {{site.url}}/go/rfc-32-bit-ios-unsupported
