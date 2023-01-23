@@ -8,6 +8,6 @@ gem 'activesupport', '~> 7.0.4'
 gem 'liquid-tag-parser', '~> 2.0.2'
 
 group :jekyll_plugins do
-  gem 'jekyll-toc', '~> 0.17.1'
+  gem 'jekyll-toc', '~> 0.18.0'
 end
  
